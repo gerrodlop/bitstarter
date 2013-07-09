@@ -12,8 +12,8 @@ app.get('/', function(request, response) {
 			console.log(status.message);
 			return;
 		}
-		var buffer = new Buffer(100);
-		fs.read(fd, buffer, 0, 100, 0, function(err, num) {
+		var buffer = new Buffer(5000);
+		fs.read(fd, buffer, 0, 5000, 0, function(err, num) {
 			console.log(buffer.toString('utf-8', 0, num));
   		response.send(buffer.toString('utf-8', 0, num));
 		});
